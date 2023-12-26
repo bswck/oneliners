@@ -10,7 +10,7 @@
         ]
         and g
     )
-) and (n := __import__("random").randint(kmin := 1, kmax := 10)) and (it := iter(range(kmin, kmax+1))) and (
+) and (n := __import__("random").randint(kmin := 1, kmax := 10)) and (it := iter(r := (range(kmin, kmax+1)))) and (
     log := [
         g
         if (
@@ -20,4 +20,4 @@
         else (print("You win!") or list(it))
         for _ in it
     ]
-) and len(log) == atts and print(f"You ran out of guesses! The right number was {n}.")
+) and len(log) == len(r) and print(f"You ran out of guesses! The right number was {n}.")
