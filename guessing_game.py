@@ -35,15 +35,19 @@
 ) and (arguments := argument_parser.parse_args()) and (
     (min_number := arguments.min_number),
     (max_number := arguments.max_number),
-) and (max_guesses := arguments.max_guesses) and (
+) and (max_guesses := abs(arguments.max_guesses)) and (
     input_number := lambda prompt: (
         (__input_helper := __import__("typing").cast("list[object]", [0]))
         and (__input_iterator := iter(__input_helper))
         and [
             (
-                (answer_candidate := input("Your guess: "))
+                (answer_candidate := input("Your guess: ").strip())
                 and (
-                    answer_candidate.isdigit()
+                    (
+                        answer_candidate[1:].isdigit()
+                        if answer_candidate.startswith("-")
+                        else answer_candidate.isdigit()
+                    )
                     and ((number_from_player := int(answer_candidate)) or True)
                 )
                 or __input_helper.append(0)
