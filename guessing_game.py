@@ -1,4 +1,6 @@
-# Split into multi-line for readability; this stmt expression can be fit into one line.
+# Split into multi-line for readability.
+# This expression statement (https://docs.python.org/3/reference/simple_stmts.html#expression-statements)
+#   can be fit into one line.
 
 # Usage: guessing_game.py [-h] [-min MIN_NUMBER] [-max MAX_NUMBER] [-g GUESSES]
 
