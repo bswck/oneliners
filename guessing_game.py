@@ -1,17 +1,37 @@
 # Split into multi-line for readability; this stmt expression can be fit into one line.
 
-# Usage: t.py [-h] [-min MIN_NUMBER] [-max MAX_NUMBER] [-g GUESSES]
+# Usage: guessing_game.py [-h] [-min MIN_NUMBER] [-max MAX_NUMBER] [-g GUESSES]
 
 # Options:
 #   -h, --help                                  show this help message and exit
-#   -min MIN_NUMBER, --min-number MIN_NUMBER    minimum number
-#   -max MAX_NUMBER, --max-number MAX_NUMBER    maximum number
-#   -g GUESSES, --max-guesses GUESSES           maximum number of guesses
+#   -min MIN_NUMBER, --min-number MIN_NUMBER    minimum random number to be guessed
+#   -max MAX_NUMBER, --max-number MAX_NUMBER    maximum random number to be guessed
+#   -g GUESSES, --max-guesses GUESSES           maximum number of player's guesses
 
 (argument_parser := __import__("argparse").ArgumentParser()) and (
-    argument_parser.add_argument("-min", "--min-number", type=int, default=1)
-) and (argument_parser.add_argument("-max", "--max-number", type=int, default=10)) and (
-    argument_parser.add_argument("-g", "--max-guesses", type=int, default=5)
+    argument_parser.add_argument(
+        "-min",
+        "--min-number",
+        type=int,
+        help="minimum random number to be guessed",
+        default=1,
+    )
+) and (
+    argument_parser.add_argument(
+        "-max",
+        "--max-number",
+        type=int,
+        help="maximum random number to be guessed",
+        default=10,
+    )
+) and (
+    argument_parser.add_argument(
+        "-g",
+        "--max-guesses",
+        type=int,
+        help="maximum number of player's guesses",
+        default=5,
+    )
 ) and (arguments := argument_parser.parse_args()) and (
     (min_number := arguments.min_number),
     (max_number := arguments.max_number),
