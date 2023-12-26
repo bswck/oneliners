@@ -9,8 +9,9 @@
 # Split into multi-line and enriched with comments for you to understand what's going on.
 # This expression statement (https://docs.python.org/3/reference/simple_stmts.html#expression-statements)
 #   can be fit into one line.
+#
 # To see how it would look like in one line, run:
-# $ cat guessing_game.py | python -c "print(ast.unparse(ast.parse(input())))"
+# $ python -c "print((ast := __import__('ast')).unparse(ast.parse(__import__('pathlib').Path('guessing_game.py').read_text())))"
 # on Python 3.9+.
 
 # Make customizable via command line arguments.
