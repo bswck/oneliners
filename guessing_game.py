@@ -9,7 +9,9 @@
 # Split into multi-line and enriched with comments for you to understand what's going on.
 # This expression statement (https://docs.python.org/3/reference/simple_stmts.html#expression-statements)
 #   can be fit into one line.
-# To see how it would look like in one line, try to ast.unparse(ast.parse()) this code.
+# To see how it would look like in one line, run:
+# $ cat guessing_game.py | python -c "print(ast.unparse(ast.parse(input())))"
+# on Python 3.9+.
 
 # Make customizable via command line arguments.
 (argument_parser := __import__("argparse").ArgumentParser()) and (
@@ -42,7 +44,7 @@
 ) and (arguments := argument_parser.parse_args()) and (
     (min_number := arguments.min_number),
     (max_number := arguments.max_number),
-    # Abort on max_guesses == 0. Ensure that max_guesses is positive.
+    # ↓ Abort on max_guesses == 0. Ensure that max_guesses is positive.
 ) and (max_guesses := abs(arguments.max_guesses)) and (
     # Create a function that will ask the player for a number.
     # If the player inputs a non-number, ask again until a number is inputted.
