@@ -10,7 +10,7 @@
         ]
         and g
     )
-) and (n := __import__("random").randint(1, 10)) and (it := iter(range(atts := 10))) and (
+) and (n := __import__("random").randint(kmin := 1, kmax := 10)) and (it := iter(range(kmin, kmax+1))) and (
     log := [
         g
         if (
