@@ -6,7 +6,7 @@ Can you write these in one line of Python?
 - [ ] The Sieve of Eratosthenes.
 
 ## 😃 Easy
-- [x] [The guessing game.](/guessing_game.py)
+- [x] The guessing game. [Solution](/guessing_game.py).
 
 ## 😅 Intermediate
 - [ ] An HTTP server serving static files from a directory.
