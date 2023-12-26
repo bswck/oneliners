@@ -1,5 +1,5 @@
 # oneliners
-Can you write these in one line?
+Can you write these in one line of Python?
 
 ## 😆 Funnily easy
 - [ ] The Fizz Buzz game.
