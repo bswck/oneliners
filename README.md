@@ -11,9 +11,10 @@ Can you write these in one line of Python?
 ## 😅 Intermediate
 - [ ] An HTTP server serving static files from a directory.
 
-## 🥶 Hard
+## 😵 Hard
 - [ ] A CLI Flask app serving HTML documents rendered from Jinja2 templates in a directory, with a YAML configuration for the template context.
 
-## 🚀 Ambitious
+## 🥵 Good luck!
+- [ ] A full-fledged JSON parser.
 - [ ] A basic TUI calculator.
 - [ ] A basic text editor.
