@@ -18,4 +18,4 @@ Can you write these in one line of Python?
 ## 🥵 Good luck!
 - [ ] A full-fledged JSON parser.
 - [ ] A basic TUI calculator.
-- [ ] A basic text editor.
+- [ ] A basic TUI text editor.
