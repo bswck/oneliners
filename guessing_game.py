@@ -43,17 +43,20 @@
         and (__input_iterator := iter(__input_helper))
         and [
             (
-                (answer_candidate := input("Your guess: ").strip())
-                and (
-                    (
-                        answer_candidate[1:].isdigit()
-                        if answer_candidate.startswith("-")
-                        else answer_candidate.isdigit()
-                    )
-                    and ((number_from_player := int(answer_candidate)) or True)
+                answer_candidate := input(
+                    (prompt := prompt or "Input a number:")
+                    + " " * (not prompt.endswith(" "))
                 )
-                or __input_helper.append(0)
+            ).strip()
+            and (
+                (
+                    answer_candidate[1:].isdigit()
+                    if answer_candidate.startswith("-")
+                    else answer_candidate.isdigit()
+                )
+                and ((number_from_player := int(answer_candidate)) or True)
             )
+            or __input_helper.append(0)
             for _ in __input_iterator
         ]
         and number_from_player
@@ -64,8 +67,12 @@
     guesses_made := [
         answered_number
         if (
-            (answered_number := input_number("What is your guess? ")) != random_number
-            and (print("Too low" if answered_number < random_number else "Too high") or True)
+            (answered_number := input_number("What is your guess?")) != random_number
+            and (
+                print(
+                    "Too low" if answered_number < random_number else "Too high"
+                ) or True
+            )
         )
         else (print("You win!") or list(__game_iterator))
         for _ in __game_iterator
