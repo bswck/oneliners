@@ -1,6 +1,6 @@
 # Split into multi-line for readability; this stmt expression can be fit into one line.
 
-# Usage: t.py [-h] [-min MIN_NUMBER] [-max MAX_NUMBER] [-g GUESSES]
+# Usage: python -m guessing_game [-h] [-min MIN_NUMBER] [-max MAX_NUMBER] [-g GUESSES]
 
 # Options:
 #   -h, --help                                  show this help message and exit
